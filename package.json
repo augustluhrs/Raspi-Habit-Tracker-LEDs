@@ -1,0 +1,16 @@
+{
+  "name": "raspi-habit-tracker-leds",
+  "version": "1.0.0",
+  "description": "",
+  "main": "habits.js",
+  "dependencies": {
+    "easybotics-rpi-rgb-led-matrix": "^0.4.1",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
