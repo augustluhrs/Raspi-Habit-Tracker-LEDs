@@ -44,14 +44,28 @@ function updateLEDs(){
   let x = 0;
   if (days.length < 32) {
     rows = days.length;
-  }
-  for (let i = 0; i < 16; i++){
-    x = 0;
-    for (let j = rows - 1; j >= 0; j--){
-      if(days[j].habits[i].completed) {
-        matrix.setPixel(x, i, days[j].habits[i].colors[0], days[j].habits[i].colors[1], days[j].habits[i].colors[2]);
+
+    for (let i = 0; i < 16; i++){
+      x = 0;
+      for (let j = rows - 1; j >= 0; j--){
+        if(days[j].habits[i].completed) {
+          matrix.setPixel(x, i, days[j].habits[i].colors[0], days[j].habits[i].colors[1], days[j].habits[i].colors[2]);
+        }
+        x++;
       }
-      x++;
+    }
+  } else {
+    rows = days.length;
+    let start = rows - 32;
+
+    for (let i = 0; i < 16; i++){
+      x = 0;
+      for (let j = rows - 1; j >= start; j--){
+        if (days[j].habits[i].completed) {
+           matrix.setPixel(x, i , days[j].habits[i].colors[0], days[j].habits[i].colors[1], days[j].habits[i].colors[2]);
+        }
+        x++;
+      }
     }
   }
 }
